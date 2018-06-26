@@ -118,6 +118,8 @@ namespace cryptonote
         MAP_JON_RPC_WE("get_version",            on_get_version,                COMMAND_RPC_GET_VERSION)
         MAP_JON_RPC_WE("get_coinbase_tx_sum",    on_get_coinbase_tx_sum,        COMMAND_RPC_GET_COINBASE_TX_SUM)
         MAP_JON_RPC_WE("get_fee_estimate",       on_get_per_kb_fee_estimate,    COMMAND_RPC_GET_PER_KB_FEE_ESTIMATE)
+        MAP_JON_RPC_WE("get_top",                on_get_top,                    COMMAND_RPC_GET_TOP)
+
       END_JSON_RPC_MAP()
     END_URI_MAP2()
 
@@ -166,6 +168,9 @@ namespace cryptonote
     bool on_get_version(const COMMAND_RPC_GET_VERSION::request& req, COMMAND_RPC_GET_VERSION::response& res, epee::json_rpc::error& error_resp);
     bool on_get_coinbase_tx_sum(const COMMAND_RPC_GET_COINBASE_TX_SUM::request& req, COMMAND_RPC_GET_COINBASE_TX_SUM::response& res, epee::json_rpc::error& error_resp);
     bool on_get_per_kb_fee_estimate(const COMMAND_RPC_GET_PER_KB_FEE_ESTIMATE::request& req, COMMAND_RPC_GET_PER_KB_FEE_ESTIMATE::response& res, epee::json_rpc::error& error_resp);
+    bool on_get_top(const COMMAND_RPC_GET_TOP::request& req, COMMAND_RPC_GET_TOP::response& res);
+
+    
     //-----------------------
 
 private:
